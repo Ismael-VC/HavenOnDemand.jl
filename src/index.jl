@@ -1,6 +1,6 @@
 HODIndex(client::HODClient, name::AbstractString) = HODIndex(client, utf8(name))
-
 Base.length(index::HODIndex) = length(index.documents)
+Base.delete!(index::HODIndex) = delete_index(index.client, index.name)
 
 function Base.push!(index::HODIndex, document::UTF8String)
     push!(index.documents, document)
@@ -29,5 +29,3 @@ function add_documents(index::HODIndex; async::Bool = false)
         async = async
     )
 end
-
-Base.delete!(index::HODIndex) = delete_index(index.client, index.name)

@@ -1,9 +1,10 @@
 module HavenOnDemand
 
+using HttpCommon
 using JSON
 using Requests
 
-       # Types
+       # types.jl
 export HODClient,
        HODIndex,
        HODSyncResponse,
@@ -11,7 +12,7 @@ export HODClient,
        HODException,
        DocumentException,
 
-       # Client
+       # client.jl
        create_index,
        parse_index,
        has_index,
@@ -23,7 +24,7 @@ export HODClient,
        call_API,
        get_async_result,
 
-       # Index
+       # index.jl
        size,
        push_doc,
        push_docs,
@@ -32,9 +33,14 @@ export HODClient,
        add_docs,
        delete,
 
-       # Responses
+       # responses.jl
        json,
        get_result
+
+       # exceptions.jl
+       Base.showerror
+
+const DOCUMENTS = AbstractString[]
 
 include("types.jl")
 include("client.jl")

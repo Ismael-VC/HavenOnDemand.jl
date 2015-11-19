@@ -7,15 +7,15 @@ function parse_index(client::HODClient, index::HODIndex)
 
 end
 
-function has_index(client::HODClient, name::UTF8String)
+function has_index(client::HODClient, name::AbstractString)
 
 end
 
-function get_index(client::HODClient, name::UTF8String)
+function get_index(client::HODClient, name::AbstractString)
 
 end
 
-function delete_index(client::HODClient, name)
+function delete_index(client::HODClient, name::AbstractString)
 
 end
 
